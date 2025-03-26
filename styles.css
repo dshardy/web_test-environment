@@ -1,0 +1,13 @@
+#myDiv {
+
+    height: 30vh;
+    width: 30vw;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    text-wrap: wrap;
+    /* line-break: normal; */
+    white-space: pre-wrap;
+    
+ 
+}
