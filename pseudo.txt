@@ -1,0 +1,41 @@
+STRING Str
+INT index
+
+FUNCTION TypeWriter()
+    IF index < length of string - 1
+        print character at index in str
+        increment index
+        call TypeWriter() after 100ms
+    END IF
+
+TypeWriter()
+
+INT currentcharacter
+INT storefulltext[]
+INT currentsentence
+INT typingspeed
+INT totalcharacters
+
+FUNCTION TypeWriter()
+    INT totalcharacters = num of chars in storefulltext[]
+    INT storenumberofsentences = number of elements in storefulltext[]
+    IF currentcharacter < totalcharacters
+        IF currentsentence < number of elements in storefulltext[]
+                PRINT currentcharacter
+                INCREMENT currentcharacter   
+                INCREMENT currentsentence
+        ELSE
+            EXIT TypeWriter()
+        END IF
+    EXIT TypeWriter()
+    END IF
+    WAIT for typingspeed
+END FUNCTION
+
+TypeWriter()
+
+// Input a break every time we go to a new string element.
+
+
+
+
