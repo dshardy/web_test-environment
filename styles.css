@@ -1,4 +1,7 @@
-#myDiv {
+/* .myDiv for class="myDiv" */
+/* #myDiv for a id="myDiv" */
+
+.myDiv {
 
     height: 30vh;
     width: 30vw;
@@ -8,6 +11,6 @@
     text-wrap: wrap;
     /* line-break: normal; */
     white-space: pre-wrap;
+    color: blue;
     
- 
 }

@@ -10,6 +10,8 @@ FUNCTION TypeWriter()
 
 TypeWriter()
 
+================================================================================================
+
 INT currentcharacter
 INT storefulltext[]
 INT currentsentence
@@ -24,14 +26,15 @@ FUNCTION TypeWriter()
         PRINT currentcharacter
         blinkcursor()
         INCREMENT currentcharacter 
-        IF currentsentence > number of characters in ArrayElement storefulltext[currentsentence]
-            PRINT <br>
+        IF currentcharacter > number of characters in ArrayElement storefulltext[currentsentence]
+            PRINT <br/>
             INCREMENT currentsentence
         END IF        
     ELSE
-        EXIT TypeWriter()  
+        RETURN 
     END IF
     WAIT for typingspeed
+    TypeWriter()
 END FUNCTION
 
 FUNCTION blinkcursor()
@@ -41,7 +44,7 @@ FUNCTION blinkcursor()
     DELETE the PRINTED underscore (currentcharacter - 1)
 END FUNCTION    
 
-TypeWriter()
+TypeWriter() // Will this get called after TypeWriter() exit in code.j
 
 
 
