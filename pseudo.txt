@@ -15,26 +15,21 @@ INT storefulltext[]
 INT currentsentence
 INT typingspeed
 INT totalcharacters
-INT blinkcursorate
+INT blinkcursorate = 500ms
 
 FUNCTION TypeWriter()
-    INT totalcharacters = num of chars in storefulltext[]
+    INT totalcharacters = num of chars in storefulltext[In all elements]
     INT storenumberofsentences = number of elements in storefulltext[]
     IF currentcharacter < totalcharacters
         PRINT currentcharacter
         blinkcursor()
         INCREMENT currentcharacter 
-        IF currentsentence < number of elements in storefulltext[]
-            
-            FOR EACH ELEMENT IN storefulltext[each element]
-            IF currentsentence > number of characters in elment storefulltext[i]
-                EXIT TypeWriter()
-            //INCREMENT currentsentence
-            NEXT ELEMENT
-        
-        ELSE
-            EXIT TypeWriter()
-        END IF
+        IF currentsentence > number of characters in ArrayElement storefulltext[currentsentence]
+            PRINT <br>
+            INCREMENT currentsentence
+        END IF        
+    ELSE
+        EXIT TypeWriter()  
     END IF
     WAIT for typingspeed
 END FUNCTION
@@ -43,12 +38,11 @@ FUNCTION blinkcursor()
     IF currentcharacter is not printed on the screen
     PRINT an underscore "_"
     WAIT blinkcursorate
-    DELETE the PRINTED underscore
+    DELETE the PRINTED underscore (currentcharacter - 1)
 END FUNCTION    
 
 TypeWriter()
 
-// Input a break every time we go to a new string element.
 
 
 
