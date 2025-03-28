@@ -7,7 +7,7 @@ var currentsentence;
 var typingspeed = 100;
 var index = 0;
 var totalcharacters = 0;
-const blinkcursorate = 500;
+const blinkcursorate = 500; 
 
 function PetScreen() {
     myDiv.innerHTML += fullTextArray.charAt(index); // Add one character

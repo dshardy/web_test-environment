@@ -2,7 +2,6 @@
 /* #myDiv for a id="myDiv" */
 
 .myDiv {
-
     height: 30vh;
     width: 30vw;
     overflow: hidden;
@@ -11,6 +10,7 @@
     text-wrap: wrap;
     /* line-break: normal; */
     white-space: pre-wrap;
-    color: rgb(255, 123, 0);
-    
+    color: blue;
+    background-color: burlywood;
 }
+

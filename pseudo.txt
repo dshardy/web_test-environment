@@ -13,20 +13,20 @@ TypeWriter()
 ================================================================================================
 
 INT currentcharacter
-INT storefulltext[]
+INT fullTextArray[]
 INT currentsentence
 INT typingspeed
 INT totalcharacters
 INT blinkcursorate = 500ms
 
-FUNCTION TypeWriter()
-    INT totalcharacters = num of chars in storefulltext[In all elements]
-    INT storenumberofsentences = number of elements in storefulltext[]
+FUNCTION PetScreen()
+    INT totalcharacters = num of chars in fullTextArray [In all elements]
+    INT storenumberofsentences = number of elements in fullTextArray[]
     IF currentcharacter < totalcharacters
         PRINT currentcharacter
         blinkcursor()
         INCREMENT currentcharacter 
-        IF currentcharacter > number of characters in ArrayElement storefulltext[currentsentence]
+        IF currentcharacter > number of characters in ArrayElement fullTextArray[currentsentence]
             PRINT <br/>
             INCREMENT currentsentence
         END IF        
@@ -34,7 +34,7 @@ FUNCTION TypeWriter()
         RETURN 
     END IF
     WAIT for typingspeed
-    TypeWriter()
+    PetScreen()
 END FUNCTION
 
 FUNCTION blinkcursor()
