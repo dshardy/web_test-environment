@@ -1,32 +1,77 @@
 
-let i = 0;
+let i = 0; // Index for characters within a sentence
+let sentenceIndex = 0; // Index for the current sentence in fullTextArray
 let placeholder = "";
-//const fullTextArray = ["This is senctence 1", "This is senctence 2", "This is senctence 3"];
-const txt = "example@domain.com";
-var speed = 100;
+const fullTextArray = ["This is sentence 1", "This is sentence 2", "This is sentence 3"];
+var speed = 170;
 
-/* const myDiv = document.getElementById("myDiv");
-var currentcharacter = 0;
-var currentsentence = 0;
-var totalcharacters = 0;
-const blinkcursorate = 500;  */
-
- function PetScreen(){
-    // function type(){
-    placeholder += txt.charAt(i); // Add one character
+function PetScreen() {
+  // Check if we've finished the current sentence
+  if (i < fullTextArray[sentenceIndex].length) {
+    // Add one character from the current sentence
+    placeholder += fullTextArray[sentenceIndex].charAt(i);
     document.getElementById("myDiv").textContent = placeholder;
-    //document.getElementById("myDiv").setAttribute("placeholder", placeholder);
-    //document.getElementById("email-id").setAttribute("placeholder", placeholder);
     i++;
-    setTimeout(PetScreen,speed); // Call the function again after a delay
+    setTimeout(PetScreen, speed); // Continue typing the current sentence
+  } else {
+    // We've finished the current sentence
+    placeholder = ""; // Reset placeholder for the next sentence
+    i = 0; // Reset character index for the next sentence
+    sentenceIndex++; // Move to the next sentence
+
+    // Check if we've finished all sentences
+    if (sentenceIndex < fullTextArray.length) {
+      setTimeout(PetScreen, speed); // Start typing the next sentence
+    } else {
+        //All sentences have been displayed.
+        console.log("All sentences have been displayed.");
+    }
+  }
 }
 
-/* function type(){
-    placeholder += txt.charAt(i);
-    document.getElementById("email-id").setAttribute("placeholder",placeholder);
-    i++;
-    setTimeout(type,speed);
-} */
+PetScreen();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 PetScreen();
 
